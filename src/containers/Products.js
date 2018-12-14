@@ -19,8 +19,9 @@ class Products extends Component {
       return payload.map((product, index) => {
         return (
           <View key={index}>
-            <Text>{product.brand}</Text>
-            <Text>{product.name}</Text>
+            <Text>
+              {product.name.first} {product.name.last}
+            </Text>
           </View>
         );
       });

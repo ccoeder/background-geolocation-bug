@@ -8,9 +8,9 @@ import Api from "../library/api";
 export function fetchProducts() {
   return dispatch => {
     dispatch(getProducts());
-    return Api.get("/products.json")
+    return Api.get("/api/?results=15")
       .then(res => {
-        dispatch(getProductsSuccess(res.data));
+        dispatch(getProductsSuccess(res.data.results));
       })
       .catch(err => {
         dispatch(getProductsFailure(err.response));
